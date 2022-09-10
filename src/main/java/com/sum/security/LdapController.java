@@ -65,28 +65,4 @@ public class LdapController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Error: Unauthorized");
         }
     }
-
-
-
-    @Autowired
-    WebClient webClient;
-
-    /**
-     * The api call a resource server to fetch details. The resource server
-     * api is protected with oauth. The api passes the access token to the
-     * resource server to get access to the api in the resource server.
-     * @param res
-     * @return
-     */
-    @GetMapping(value = "/welcome")
-    public String welcome(HttpServletResponse res){
-        String url = "http://localhost:8081/users/api/welcome";
-        String block = "";
-        try{
-            block = webClient.get().uri(url).retrieve().bodyToMono(String.class).block();
-        }catch (Exception e){
-            return "{\"error\": \"Error while fetching data\", \"error_description\": \"" + e.getMessage() + "\"}";
-        }
-        return block;
-    }
 }

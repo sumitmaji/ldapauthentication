@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.sum</groupId>
     <artifactId>ldapauthentication</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>ldapauthentication</name>
     <description>Ldap Authentication Service for Ingress Service</description>
     <properties>

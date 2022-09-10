@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: devtool
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true # Insert data after schema initialization
+  #    hibernate:
+#      ddl-auto: true
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+  data:
+    rest:
+      basePath: /api

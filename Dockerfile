@@ -8,9 +8,9 @@ RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 FROM node:7.10 as frontend-build
 WORKDIR /usr/src/app
-COPY __PATH__/package*.json ./
+COPY frontend/package*.json ./
 RUN npm install
-COPY __PATH__/ ./
+COPY frontend/ ./
 RUN npm run build
 
 FROM openjdk:8-jdk-alpine

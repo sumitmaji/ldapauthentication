@@ -15,14 +15,12 @@ service:
   port: 8001
 
 secret:
-  enabled: true
+  enabled: false
 
 env:
-  enabled: true
+  enabled: false
   normal: {}
-  secret:
-    CLIENT_ID: __CLIENT_ID__
-    CLIENT_SECRET: __CLIENT_SECRET__
+  secret: {}
 
 ingress:
   enabled: true

@@ -52,7 +52,7 @@ public class IngressLdapWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and()
                 .formLogin()
-                .loginPage("/index.html")
+                .loginPage("/authenticate")
                 .successHandler(getSuccessHandler())
                 .failureHandler(getFailureHandler())
                 .and()

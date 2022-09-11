@@ -3,6 +3,7 @@ package com.sum.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.ldap.core.support.BaseLdapPathContextSource;
 import org.springframework.ldap.core.support.LdapContextSource;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -36,20 +37,27 @@ public class IngressLdapWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors().disable()
                 .requestMatchers()
                 .antMatchers("/check", "/authenticate")
+                .antMatchers(
+                        HttpMethod.GET,
+                        "/index*", "/static/**", "/*.js", "/*.json", "/*.ico", "/*.css")
                 .and()
                 .authorizeRequests()
+                .antMatchers(
+                        HttpMethod.GET,
+                        "/index*", "/static/**", "/*.js", "/*.json", "/*.ico","/*.css")
+                .permitAll()
                 .antMatchers("/check").permitAll() // Check if user is authenticated
                 .antMatchers("/authenticate").permitAll() // Presents user with login page
                 .anyRequest().authenticated()
 
                 .and()
                 .formLogin()
-                .loginPage("/authenticate")
+                .loginPage("/index.html")
                 .successHandler(getSuccessHandler())
                 .failureHandler(getFailureHandler())
                 .and()
                 .logout()
-                .logoutSuccessUrl("/authenticate")
+                .logoutSuccessUrl("/index.html")
                 .invalidateHttpSession(true).deleteCookies("JSESSIONID")
         ;
     }

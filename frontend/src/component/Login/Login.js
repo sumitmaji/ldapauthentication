@@ -5,11 +5,11 @@ async function loginUser(credentials) {
  return fetch('http://localhost:8080/authenticate', {
    method: 'POST',
    headers: {
-     'Content-Type': 'application/json'
+     "Content-Type": "application/x-www-form-urlencoded",
    },
-   body: JSON.stringify(credentials),
+   body: `username=${credentials.username}&password=${credentials.password}`,
    credentials: 'include',
-                mode: 'no-cors'
+    mode: 'no-cors'
  })
    .then(data => data.json())
 }

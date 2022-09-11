@@ -9,8 +9,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const ctx = window.contextPath;
 root.render(
   <React.StrictMode>
-  <HashRouter>
+
     <App contextPath={ctx}/>
-    </HashRouter>
+
   </React.StrictMode>
 );

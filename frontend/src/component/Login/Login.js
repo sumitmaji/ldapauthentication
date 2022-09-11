@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
+import useAPIError from '../../common/hooks/useAPIError';
 
 async function loginUser(credentials) {
  return fetch(`/authenticate`, {
@@ -17,6 +18,8 @@ async function loginUser(credentials) {
 export default function Login() {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  const { addError } = useAPIError();
+  
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -25,6 +28,9 @@ export default function Login() {
       password
     });
 
+	if(response.error){
+		addError(response.message)
+	}
 
   }
 

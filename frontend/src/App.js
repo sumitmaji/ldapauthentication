@@ -4,12 +4,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./component/Login/Login";
 
-function App() {
+function App({contextPath}) {
   return (
     <div className="wrapper">
       <BrowserRouter>
         <Routes>
-          <Route path={"/authenticate"} element={<Login />} />
+          <Route path={"/authenticate"} element={<Login contextPath/>} />
         </Routes>
       </BrowserRouter>
     </div>

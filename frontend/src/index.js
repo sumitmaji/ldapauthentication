@@ -6,7 +6,7 @@ import { HashRouter } from "react-router-dom";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const ctx = window.contextPath;
+const ctx = window.location.origin;
 root.render(
   <React.StrictMode>
 

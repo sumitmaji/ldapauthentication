@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import './Login.css';
 
 async function loginUser(credentials) {
- return fetch('http://localhost:8080/authenticate', {
+ return fetch(`/authenticate`, {
    method: 'POST',
    headers: {
      "Content-Type": "application/x-www-form-urlencoded",
    },
    body: `username=${credentials.username}&password=${credentials.password}`,
    credentials: 'include',
-    mode: 'no-cors'
+   mode: 'no-cors'
  })
    .then(data => data.json())
 }
@@ -20,10 +20,12 @@ export default function Login() {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const token = await loginUser({
+    const response = await loginUser({
       username,
       password
     });
+
+
   }
 
   return(

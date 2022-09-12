@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: prod
+
+ldap:
+  url: ldap://master.cloud.com
+  basedn: dc=cloud,dc=com
+  admindn: cn=admin,dc=cloud,dc=com
+  password: ${LDAP_PASSWORD}

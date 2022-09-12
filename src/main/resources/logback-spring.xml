@@ -1,6 +1,6 @@
 <configuration>
     <springProfile
-            name="local,qa,default,devtool">
+            name="local,qa,default,devtool,prod">
         <appender name="CONSOLE"
                   class="ch.qos.logback.core.ConsoleAppender">
             <encoder>

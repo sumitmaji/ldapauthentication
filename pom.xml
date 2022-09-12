@@ -14,7 +14,7 @@
     <name>ldapauthentication</name>
     <description>Ldap Authentication Service for Ingress Service</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>8</java.version>
         <!--set this to your docker acct name-->
         <docker.image.prefix>skmaji1</docker.image.prefix>
 

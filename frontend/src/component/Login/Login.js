@@ -39,16 +39,19 @@ export default function Login() {
     <div className="container">
 	<div className="screen">
 		<div className="screen__content">
-			<form className="login" onSubmit={handleSubmit}>
+					<div className="gok_icon">
+					    <img src="/gok.png" style={{width: 150, height: 150, position: "absolute", top: -50, left: -50}}/>
+        			</div>
+			<form className="login" method="post" action="/authenticate">
 				<div className="login__field">
 					<i className="login__icon fas fa-user"></i>
-					<input type="text" className="login__input" placeholder="User name / Email" onChange={e => setUserName(e.target.value)}/>
+					<input type="text" className="login__input" placeholder="User name / Email" onChange={e => setUserName(e.target.value)} id="username" name="username" required autofocus/>
 				</div>
 				<div className="login__field">
 					<i className="login__icon fas fa-lock"></i>
-					<input type="password" className="login__input" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
+					<input type="password" className="login__input" placeholder="Password" onChange={e => setPassword(e.target.value)} id="password" name="password" required/>
 				</div>
-				<button className="button login__submit">
+				<button className="button login__submit" type="submit">
 					<span className="button__text">Log In Now</span>
 					<i className="button__icon fas fa-chevron-right"></i>
 				</button>				

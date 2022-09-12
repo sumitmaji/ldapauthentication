@@ -19,7 +19,7 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
-@Profile(value = "prod")
+@Profile(value = "ldap")
 public class IngressLdapWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 

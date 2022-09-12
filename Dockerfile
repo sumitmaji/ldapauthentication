@@ -21,4 +21,4 @@ COPY --from=backend-build ${DEPENDENCY}/META-INF /app/META-INF
 COPY --from=backend-build ${DEPENDENCY}/BOOT-INF/classes /app
 COPY --from=frontend-build /usr/src/app/build /app/classes/public
 
-ENTRYPOINT ["java", "-cp", "app:app/lib/*:app/classes", "-Dserver.port=8001", "com.sum.AuthenticationApplication"]
+ENTRYPOINT ["java", "-cp", "app:app/lib/*:app/classes", "-Dserver.port=8001 -Dspring.profiles.active=default,mem", "com.sum.AuthenticationApplication"]

@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import './Login.css';
 import useAPIError from '../../common/hooks/useAPIError';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import UserIcon from '@mui/icons-material/Person';
+import PasswordIcon from '@mui/icons-material/Lock';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
 
 async function loginUser(credentials) {
  return fetch(`/authenticate`, {
@@ -44,24 +51,24 @@ export default function Login() {
         			</div>
 			<form className="login" method="post" action="/authenticate">
 				<div className="login__field">
-					<i className="login__icon fas fa-user"></i>
+					<i className="login__icon fas fa-user"><UserIcon fontSize="small"/></i>
 					<input type="text" className="login__input" placeholder="User name / Email" onChange={e => setUserName(e.target.value)} id="username" name="username" required autofocus/>
 				</div>
 				<div className="login__field">
-					<i className="login__icon fas fa-lock"></i>
+					<i className="login__icon fas fa-lock"><PasswordIcon fontSize="small"/></i>
 					<input type="password" className="login__input" placeholder="Password" onChange={e => setPassword(e.target.value)} id="password" name="password" required/>
 				</div>
 				<button className="button login__submit" type="submit">
 					<span className="button__text">Log In Now</span>
-					<i className="button__icon fas fa-chevron-right"></i>
+					<i className="button__icon fas fa-chevron-right"><ArrowForwardIosIcon fontSize="small"/></i>
 				</button>				
 			</form>
 			<div className="social-login">
 				<h3>log in via</h3>
 				<div className="social-icons">
-					<a href="#" className="social-login__icon fab fa-instagram"></a>
-					<a href="#" className="social-login__icon fab fa-facebook"></a>
-					<a href="#" className="social-login__icon fab fa-twitter"></a>
+					<a href="#" className="social-login__icon fab fa-instagram"><InstagramIcon fontSize="small"/></a>
+					<a href="#" className="social-login__icon fab fa-facebook"><FacebookIcon fontSize="small"/></a>
+					<a href="#" className="social-login__icon fab fa-twitter"><TwitterIcon fontSize="small"/></a>
 				</div>
 			</div>
 		</div>

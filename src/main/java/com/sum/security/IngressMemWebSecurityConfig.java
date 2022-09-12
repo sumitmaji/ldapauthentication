@@ -14,7 +14,7 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
-@Profile(value = "default")
+@Profile(value = "local")
 public class IngressMemWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
